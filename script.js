@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const quoteItems = document.querySelectorAll('.quote-item');
     const quoteDots = document.querySelectorAll('.quote-dots .dot');
     let currentQuote = 0;
+    let quoteInterval;
     
     // Function to show a specific quote
     const showQuote = (index) => {
@@ -199,15 +200,41 @@ document.addEventListener('DOMContentLoaded', function() {
         currentQuote = index;
     };
     
+    // Function to advance to the next quote
+    const nextQuote = () => {
+        const nextIndex = (currentQuote + 1) % quoteItems.length;
+        showQuote(nextIndex);
+    };
+    
+    // Function to start automatic sliding
+    const startAutoSlide = () => {
+        // Clear any existing interval first
+        if (quoteInterval) {
+            clearInterval(quoteInterval);
+        }
+        // Set new interval to change quote every 3 seconds
+        quoteInterval = setInterval(nextQuote, 3000);
+    };
+    
     // Add click event to dots
     quoteDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showQuote(index);
+            
+            // Clear the interval when user manually selects a quote
+            if (quoteInterval) {
+                clearInterval(quoteInterval);
+            }
+            
+            // Restart the automatic sliding after a brief pause
+            setTimeout(startAutoSlide, 5000);
         });
     });
     
     // Initialize quotes slider
     if (quoteItems.length > 0) {
         showQuote(0);
+        // Start automatic sliding
+        startAutoSlide();
     }
 });
