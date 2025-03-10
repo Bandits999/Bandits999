@@ -248,7 +248,6 @@
   
   .timeline-date,
   .timeline-item:nth-child(even) .timeline-date {
-      left: 75px;
-      right: auto;
+      display: none;
   }
 }
