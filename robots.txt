@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://bandits999.vercel.app/sitemap.xml
