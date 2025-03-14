@@ -18,13 +18,18 @@
     --overlay-gradient: linear-gradient(to bottom, rgba(0, 168, 255, 0.7), rgba(156, 39, 176, 0.7));
     
     /* Transitions */
-    --transition-standard: all 0.3s ease;
+    --transition-duration: 0.3s;
+    --transition-timing: ease;
+    --transition-standard: all var(--transition-duration) var(--transition-timing);
+    --transition-transform: transform var(--transition-duration) var(--transition-timing);
+    --transition-opacity: opacity var(--transition-duration) var(--transition-timing);
     
     /* Box Shadows */
-    --shadow-sm: 0 2px 10px rgba(0, 168, 255, 0.1);
-    --shadow-md: 0 5px 15px rgba(0, 168, 255, 0.15);
-    --shadow-lg: 0 10px 20px rgba(0, 168, 255, 0.2);
-    --shadow-xl: 0 15px 30px rgba(0, 168, 255, 0.25);
+    --shadow-color: rgba(0, 168, 255, 0.15);
+    --shadow-sm: 0 2px 10px var(--shadow-color);
+    --shadow-md: 0 5px 15px var(--shadow-color);
+    --shadow-lg: 0 10px 20px var(--shadow-color);
+    --shadow-xl: 0 15px 30px var(--shadow-color);
     
     /* Blur Effects */
     --blur-sm: blur(4px);
@@ -48,6 +53,7 @@ body {
     color: var(--body-text);
     background-color: var(--background-color);
     overflow-x: hidden;
+    overflow-y: auto;
     background-image: radial-gradient(circle at 10% 20%, rgba(0, 168, 255, 0.05) 0%, transparent 40%), 
                      radial-gradient(circle at 90% 80%, rgba(156, 39, 176, 0.05) 0%, transparent 40%);
 }
