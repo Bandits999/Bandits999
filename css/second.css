@@ -16,7 +16,7 @@
   cursor: pointer;
   background-color: var(--card-background);
   border: 1px solid rgba(0, 168, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition-transform), box-shadow var(--transition-duration) var(--transition-timing);
 }
 
 .gallery-item img {
@@ -92,7 +92,7 @@
   max-height: 80%;
   object-fit: contain;
   border: 3px solid rgba(0, 168, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 168, 255, 0.3), 0 0 40px rgba(156, 39, 176, 0.2);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(156, 39, 176, 0.2);
   transform: scale(0.9);
   transition: var(--transition-standard);
 }
@@ -145,7 +145,7 @@
 .lightbox-prev:hover,
 .lightbox-next:hover {
   background-color: var(--primary-color);
-  box-shadow: 0 0 15px var(--primary-color), 0 0 30px rgba(0, 168, 255, 0.3);
+  box-shadow: var(--shadow-xl), 0 0 30px var(--shadow-color);
 }
 
 /* Quotes Section */
@@ -420,7 +420,7 @@
   background-color: rgba(40, 40, 40, 0.6);
   box-shadow: var(--shadow-md);
   border: 1px solid rgba(0, 168, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition-transform), box-shadow var(--transition-duration) var(--transition-timing);
   backdrop-filter: var(--blur-sm);
   -webkit-backdrop-filter: var(--blur-sm);
 }
@@ -615,7 +615,7 @@ footer {
   height: 26px;
   border-radius: 50%;
   background: var(--primary-gradient);
-  box-shadow: 0 0 15px var(--primary-color), 0 0 30px rgba(0, 168, 255, 0.3);
+  box-shadow: var(--shadow-xl), 0 0 30px var(--shadow-color);
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -666,4 +666,63 @@ footer {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--prim-color);
+}
+
+/* About Section */
+.about {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 0 0 200px;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--primary-color);
+}
+
+.about-text {
+    flex: 1;
+    max-width: 100%;
+}
+
+.skills {
+    margin-top: 30px;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-text);
+}
+
+.skill-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
 }
