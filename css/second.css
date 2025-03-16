@@ -211,14 +211,14 @@
 }
 
 .quote-content {
-  background: rgba(30, 30, 30, 0.8);
-  padding: 40px;
+  background: rgba(18, 18, 18, 0.4);
+  backdrop-filter: blur(8px);
   border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 
-              0 0 30px rgba(0, 168, 255, 0.2);
+  border: 1px solid rgba(0, 168, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 168, 255, 0.2);
+  padding: 40px;
   margin-bottom: 30px;
   position: relative;
-  border: 1px solid rgba(0, 168, 255, 0.2);
   backdrop-filter: var(--blur-md);
   -webkit-backdrop-filter: var(--blur-md);
   width: 100%;
@@ -259,11 +259,12 @@
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  background: rgba(30, 30, 30, 0.6);
+  background: rgba(18, 18, 18, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 168, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 168, 255, 0.2);
   padding: 15px 30px;
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 168, 255, 0.15);
   backdrop-filter: var(--blur-sm);
   -webkit-backdrop-filter: var(--blur-sm);
   transform: translateY(-15px);
@@ -336,7 +337,9 @@
 }
 
 .project-card {
-  background-color: var(--card-background);
+  background: rgba(18, 18, 18, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 168, 255, 0.2);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -499,9 +502,9 @@
   align-items: center;
   padding: 20px;
   border-radius: 15px;
-  background-color: rgba(40, 40, 40, 0.6);
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0, 168, 255, 0.1);
+  background: rgba(18, 18, 18, 0.4);
+  border: 1px solid rgba(0, 168, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 168, 255, 0.2);
   transition: var(--transition-transform), box-shadow var(--transition-duration) var(--transition-timing);
   backdrop-filter: var(--blur-sm);
   -webkit-backdrop-filter: var(--blur-sm);
@@ -721,12 +724,14 @@ footer {
 }
 
 .timeline-content {
-  background-color: var(--card-background);
   padding: 25px;
   border-radius: 10px;
   box-shadow: var(--shadow-md);
   max-width: 450px;
-  border: 1px solid rgba(0, 168, 255, 0.1);
+  background: rgba(18, 18, 18, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 168, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 168, 255, 0.2);
   backdrop-filter: var(--blur-sm);
   -webkit-backdrop-filter: var(--blur-sm);
 }
