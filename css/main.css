@@ -337,12 +337,6 @@ header.scrolled {
 
 .hero-content {
     max-width: 800px;
-    padding: 40px;
-    background: rgba(18, 18, 18, 0.4);
-    backdrop-filter: blur(8px);
-    border-radius: 20px;
-    border: 1px solid rgba(0, 168, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 168, 255, 0.2);
     position: relative;
     z-index: 2;
     transform: translateY(0);
