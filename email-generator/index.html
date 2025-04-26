@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Generator</title>
+    <title>Bandits999 | Email Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -143,6 +143,82 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        
+        /* Improved copy button layout */
+        .email-card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .email-card-container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        
+        /* Floating action buttons */
+        .fab-container {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 0.75rem;
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 20;
+        }
+        
+        .fab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .fab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .fab-secondary {
+            background-color: #a777e3;
+            color: #ffffff;
+        }
+        
+        .fab-tertiary {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+        
+        .fab-quaternary {
+            background-color: #c42121;
+            color: #ffffff;
+        }
+        
+        .fab-label {
+            position: absolute;
+            right: 4.5rem;
+            background-color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 0.875rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .fab:hover .fab-label {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gray-50">
@@ -162,7 +238,7 @@
         
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-8">
-                <div class="floating inline-block">
+                <div class="inline-block">
                     <i class="fas fa-envelope text-6xl mb-4 text-white/90"></i>
                 </div>
                 <h1 class="hero-text text-4xl md:text-5xl font-bold mb-4 relative z-10">Email Generator</h1>
@@ -200,9 +276,6 @@
                                 <option value="yahoo.com">yahoo.com</option>
                                 <option value="outlook.com">outlook.com</option>
                             </select>
-                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                                <i class="fas fa-server text-gray-500"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -213,7 +286,7 @@
     <!-- Main Content -->
     <div class="max-w-6xl mx-auto py-12 px-4">
         <div class="flex items-center justify-between mb-6">
-            <h2 class="text-2xl font-bold text-gray-800">Generated Email Variations</h2>
+            <h2 class="text-2xl font-bold text-gray-500">Generated Email Variations</h2>
             <div class="flex items-center space-x-2">
                 <span id="resultCount" class="text-sm text-gray-500">0 results</span>
                 <button id="clearResults" class="text-sm text-purple-600 hover:text-purple-800 hidden">
@@ -242,11 +315,19 @@
     </div>
 
     <!-- Floating Action Buttons -->
-    <div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-20">
-        <button id="generateRandomBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg flex items-center pulse smooth-transition hover:glow">
-            <i class="fas fa-random mr-2"></i> 
-            <span class="hidden md:inline">Random</span>
-        </button>
+    <div class="fab-container">
+        <div class="fab fab-quaternary relative" id="exitlagBtn">
+            <i class="fas fa-gamepad"></i>
+            <span class="fab-label">Exitlag</span>
+        </div>
+        <div class="fab fab-tertiary relative" id="openLinksBtn">
+            <i class="fas fa-external-link-alt"></i>
+            <span class="fab-label">Open Email Services</span>
+        </div>
+        <div class="fab fab-secondary relative" id="generateRandomBtn">
+            <i class="fas fa-random"></i>
+            <span class="fab-label">Random Name</span>
+        </div>
     </div>
 
     <script>
@@ -257,6 +338,8 @@
             const resultsContainer = document.getElementById('resultsContainer');
             const placeholderText = document.getElementById('placeholderText');
             const generateRandomBtn = document.getElementById('generateRandomBtn');
+            const openLinksBtn = document.getElementById('openLinksBtn');
+            const exitlagBtn = document.getElementById('exitlagBtn');
             const loadingIndicator = document.getElementById('loadingIndicator');
             const resultCount = document.getElementById('resultCount');
             const clearResults = document.getElementById('clearResults');
@@ -269,6 +352,33 @@
             
             // Generate random emails
             generateRandomBtn.addEventListener('click', generateRandomEmails);
+            
+            // Open email service links
+            openLinksBtn.addEventListener('click', function() {
+                const domain = domainSelect.value;
+                let url;
+                
+                switch(domain) {
+                    case 'gmail.com':
+                        url = 'https://mail.google.com';
+                        break;
+                    case 'yahoo.com':
+                        url = 'https://mail.yahoo.com';
+                        break;
+                    case 'outlook.com':
+                        url = 'https://outlook.live.com';
+                        break;
+                    default:
+                        url = 'https://mail.google.com';
+                }
+                
+                window.open(url, '_blank');
+            });
+            
+            // Open Exitlag registration page
+            exitlagBtn.addEventListener('click', function() {
+                window.open('https://www.exitlag.com/register?utm_source=Software_V5&utm_medium=Login&utm_campaign=button_register&utm_content=alwayson', '_blank');
+            });
             
             // Clear results button
             clearResults.addEventListener('click', function() {
@@ -378,7 +488,7 @@
                     for (let i = 1; i <= 3; i++) {
                         variations.push({
                             email: `${firstName}.${lastName}${i}@${domain}`,
-                            domain: domain
+                        domain: domain
                         });
                         variations.push({
                             email: `${firstName}${lastName}${i}@${domain}`,
@@ -434,26 +544,28 @@
                     const domain = emailData.domain;
                     
                     const emailCard = document.createElement('div');
-                    emailCard.className = 'email-card bg-white rounded-lg p-6 border border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative smooth-transition';
+                    emailCard.className = 'email-card bg-white rounded-lg p-6 border border-gray-200 smooth-transition';
                     
                     // Add delay for staggered animation
                     emailCard.style.animationDelay = `${index * 50}ms`;
                     emailCard.classList.add('animate-fade-in-up');
                     
                     emailCard.innerHTML = `
-                        <div class="email-content">
-                            <div class="email-address text-gray-800 font-medium text-lg">${email}</div>
-                            <div class="text-gray-500 text-sm mt-1 flex items-center">
-                                <span class="inline-block w-2 h-2 rounded-full mr-2 bg-gray-300"></span>
-                                ${domain}
+                        <div class="email-card-container">
+                            <div class="email-content">
+                                <div class="email-address text-gray-800 font-medium text-lg">${email}</div>
+                                <div class="text-gray-500 text-sm mt-1 flex items-center">
+                                    <span class="inline-block w-2 h-2 rounded-full mr-2 bg-gray-300"></span>
+                                    ${domain}
+                                </div>
                             </div>
+                            <button 
+                                class="copy-btn bg-blue-100 hover:bg-blue-200 text-blue-600 px-4 py-2 rounded-lg transition duration-300 flex items-center justify-center whitespace-nowrap"
+                                data-email="${email}"
+                            >
+                                <i class="fas fa-copy mr-2"></i> Copy
+                            </button>
                         </div>
-                        <button 
-                            class="copy-btn bg-blue-100 hover:bg-blue-200 text-blue-600 px-4 py-2 rounded-lg transition duration-300 flex items-center justify-center whitespace-nowrap"
-                            data-email="${email}"
-                        >
-                            <i class="fas fa-copy mr-2"></i> Copy
-                        </button>
                     `;
                     
                     resultsContainer.appendChild(emailCard);
