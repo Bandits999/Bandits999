@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Bandits999 – Official Website">
+  <meta name="description" content="Bandits999 – Digital Creator | Gamers | Inspiring Moments.">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="bandits999.vercel.app" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="bandits999.vercel.app">
+  <meta property="og:title" content="Bandits999 – Official Website">
+  <meta property="og:description" content="Digital Creator | Gamers | Inspiring Moments.">
+  <meta property="og:image" content="bandits999.vercel.app/profile.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="bandits999.vercel.app">
+  <meta property="twitter:title" content="Bandits999 – Official Website">
+  <meta property="twitter:description" content="Digital Creator | Gamers | Inspiring Moments.">
+  <meta property="twitter:image" content="bandits999.vercel.app/profile.png">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  <title>Contact | Bandits999</title>
+  <meta name="description" content="Contact Bandits999 for collaborations, inquiries, or just to say hello. Reach out to a digital creator and gamer.">
+  <meta name="keywords" content="Bandits999, contact, digital creator, gamer, collaboration, inquiry">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="shortcut icon" href="img/profile.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top left, #29343f, #2b293f);
+      color: #e5e5e5;
+    }
+    .profile-ring {
+      background: linear-gradient(135deg, #5b4df5, #f5a74d);
+      padding: 3px;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .post:hover {
+      transform: scale(1.025);
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="max-w-5xl mx-auto px-4 pt-10 pb-24">
+    
+    <!-- Profile -->
+    <div class="flex flex-col items-center text-center mb-8">
+      <div class="profile-ring rounded-full mb-4 cursor-pointer" onclick="openPreview(this.querySelector('img').src)">
+        <img src="img/profile.png" class="w-24 h-24 rounded-full object-cover" alt="Bandits999" loading="lazy" />
+      </div>
+      <div class="flex items-center mb-1">
+        <h1 class="text-xl font-semibold mr-2">Bandits999</h1>
+        <i class="fas fa-check-circle text-blue-500"></i>
+      </div>
+      <p class="text-gray-400 max-w-sm">
+        Gamers | Lowlife
+        <br />Beat the odds and become a champion
+      </p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center space-x-5 mb-10">
+      <a href="#" class="text-gray-300 hover:text-[#5865F2] text-xl"><i class="fab fa-discord"></i></a>
+      <a href="#" class="text-gray-300 hover:text-[#FF0000] text-xl"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="text-gray-300 hover:text-[#1877F2] text-xl"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="text-gray-300 hover:text-[#FFFFFF] text-xl"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <!-- Contact Form -->
+    <h1 class="text-3xl font-bold text-center mb-8">Contact Me</h1>
+    <form action="https://formspree.io/f/mqaqjpav" method="POST" class="glass-card p-8 rounded-lg shadow-lg mx-auto mb-10">
+      <div class="mb-4">
+        <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Your Email:</label>
+        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700" placeholder="your@email.com" required>
+      </div>
+      <div class="mb-6">
+        <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Your Message:</label>
+        <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700" placeholder="Your message here..." required></textarea>
+      </div>
+      <div class="flex items-center justify-between">
+        <button type="submit" class="bg-gradient-to-r from-purple-600 to-blue-500 px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition">
+          Send
+        </button>
+      </div>
+    </form>
+    <!-- Latest Blog Posts -->
+    <h2 class="text-lg font-semibold mb-4">Latest Posts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+      <div class="post glass-card rounded-xl p-4">
+        <img src="https://www.socialchamp.io/wp-content/uploads/2024/04/Content-Blog-Banner_Q1-2024_1125x600_128_Digital-Content-Creation.png" alt="Bandits999" loading="lazy" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <h3 class="text-xl font-bold mb-2">My Journey as a Digital Creator</h3>
+        <p class="text-gray-400 text-sm">Discover the ups and downs, challenges and triumphs of my path in the digital world.</p>
+        <a href="post/my-journey-as-a-digital-creator.html" class="text-purple-500 text-sm mt-2 inline-block">Read More &rarr;</a>
+      </div>
+      <div class="post glass-card rounded-xl p-4">
+        <img src="https://resource-cdn.obsbothk.com/product_system_back/product_img/ff8f7190653a4e33ad6f.jpg" alt="Bandits999" loading="lazy" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <h3 class="text-xl font-bold mb-2">Top Gaming Setups for Streamers</h3>
+        <p class="text-gray-400 text-sm">Level up your streaming game with these essential gear recommendations.</p>
+        <a href="post/top-5-gaming-setups-for-streamers.html" class="text-purple-500 text-sm mt-2 inline-block">Read More &rarr;</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Footer Navigation -->
+    <footer class="fixed bottom-0 w-full bg-black bg-opacity-50 backdrop-blur-md py-2 px-6 flex justify-around border-t border-gray-800">
+      <a href="index.html" class="text-gray-400 hover:text-purple-500 text-xl"><i class="fas fa-home"></i></a>
+      <a href="contact.html" class="text-purple-500 text-xl"><i class="fa-solid fa-envelope"></i></a>
+      <a href="about.html" class="text-gray-400 hover:text-purple-500 text-xl"><i class="fas fa-user"></i></a>
+  </footer>
+
+  <!-- Image Preview Modal -->
+  <div id="imagePreviewModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 hidden" onclick="if(event.target===this)closePreview()">
+    <span class="absolute top-5 right-8 text-white text-3xl cursor-pointer" onclick="closePreview()">&times;</span>
+    <img id="previewImg" src="" class="max-w-full max-h-[80vh] rounded-lg shadow-2xl border-4 border-white" />
+  </div>
+</body>
+<script src="script.js"></script>
+</html>

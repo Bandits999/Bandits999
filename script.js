@@ -1,312 +1,50 @@
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Navigation menu functionality
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navItems = document.querySelectorAll('.nav-menu li');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            
-            // Add delay to each menu item for staggered animation
-            navItems.forEach((item, index) => {
-                item.style.setProperty('--i', index);
-            });
-        });
-    }
+const galleryImages = [
+    'https://scontent.fbdo1-3.fna.fbcdn.net/v/t1.6435-9/50272085_231588334386149_127582506038853632_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Ea1huilQe4YQ7kNvwGU_HL-&_nc_oc=AdlntqgV207_maLBBMqeMiI_dugbjyetuNBvwBWy8BbfeMBMP1-jSosvaPHVr8rEIQg&_nc_zt=23&_nc_ht=scontent.fbdo1-3.fna&_nc_gid=9BbvIT0kyRlV2XeLHVz2hA&oh=00_AfJtGeuE7zN0Q7JjDUqniTfl5AG25XwXqs86OqEkrN3AmQ&oe=685EBA9E',
+    'https://scontent.fbdo1-2.fna.fbcdn.net/v/t1.6435-9/128403320_675927873285524_4260834285451954765_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=fAJXGuLgmqgQ7kNvwEf6sqI&_nc_oc=AdnbeZ1GUr_GF7Z10zEii0RsCgTkm8FNYX73fRpjJSe4cvFKy37C5jOeqATeyX-wmKc&_nc_zt=23&_nc_ht=scontent.fbdo1-2.fna&_nc_gid=posl3_dluZincyjD9n0rCw&oh=00_AfKWKp9umy6jcglZWzW_6TQVxwZmuy-XUWKUc32sGMvA3A&oe=685E9F21',
+    'https://scontent.fbdo1-2.fna.fbcdn.net/v/t39.30808-6/468859233_1551492555729047_2674250358305419302_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=jGZQ-mZO9pcQ7kNvwH6MeQQ&_nc_oc=AdlnWEwLFLtb3Cyrg9VpKI2Ic47B-lgYh9WU2SLYxIUjtKuZaXvXl_bUUPApxlSzXp0&_nc_zt=23&_nc_ht=scontent.fbdo1-2.fna&_nc_gid=NbtvGb8nRtIe6Fw4D4GQ1w&oh=00_AfLPlLlxjo9rd7Q3V7e1EIWO5ft2Kn9xGnZtbWnBEJqcVg&oe=683CF8C6',
+    'https://scontent.fbdo1-2.fna.fbcdn.net/v/t39.30808-6/489459145_1636075817270720_1776919158681055060_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=HpDdEDih7IsQ7kNvwEKFXbl&_nc_oc=AdlMed94uSxmzua73t0cxZSZtsqtxHllpU12cJ5VPxDQ-HbMNfgDM_OSz7JLb7mYPNc&_nc_zt=23&_nc_ht=scontent.fbdo1-2.fna&_nc_gid=Pv6DbIDMxsE_XKXYUA6rfw&oh=00_AfJuUVMYJn7bsK8SGqKvjBc1nk9rwsZoE6vw62ky6vrG6Q&oe=683CF814',
+    'https://scontent.fbdo1-1.fna.fbcdn.net/v/t39.30808-6/469524002_1552405532304416_419858932601563702_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=lWXnDnQ4ApUQ7kNvwGmQuxo&_nc_oc=Adn8ma8GhmLxaDTKZv-OhwHYst5PVgYuDWTndww-0fSODyg1pN5owgbXxjxfqHYzj3o&_nc_zt=23&_nc_ht=scontent.fbdo1-1.fna&_nc_gid=qiLF6oZ30GHtuFD4TRrCeg&oh=00_AfKDKcjpswbWkEbkgm3hIicuGbFGhaPgBHWNUntCzxLbog&oe=683D2D88',
+    'https://scontent.fbdo1-1.fna.fbcdn.net/v/t39.30808-6/435156200_1397608564450781_5655354968877659183_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=lOuSYLp9i1UQ7kNvwF8Unsn&_nc_oc=AdlPhLNc9uktg0Quoriu-wUINonDOn5MWvcdqMp9vvNQhxVnXpeF4jyr-ZLEqtHo64Y&_nc_zt=23&_nc_ht=scontent.fbdo1-1.fna&_nc_gid=mEGISyU_-aV_TZkgiHwPSQ&oh=00_AfIYwqEJBaDqH0sTcgL9ZBJG9dJcN0_91Rb0no67XcFwrA&oe=683D206B'
+  ];
+  const galleryGrid = document.getElementById('galleryGrid');
+  galleryImages.forEach(src => {
+    const div = document.createElement('div');
+    div.className = 'post aspect-square overflow-hidden rounded-lg cursor-pointer relative group';
 
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('header nav a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Close mobile menu if open
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                menuToggle.classList.remove('active');
-            }
-            
-            // Get the target section
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Update active link
-            navLinks.forEach(link => link.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
+    // Create the actual image element, initially blurred
+    const img = document.createElement('img');
+    img.src = src;
+    img.className = 'w-full h-full object-cover blurred-image'; // Apply blurred-image class
+    img.loading = 'lazy';
 
-    // Header scroll effect
-    const header = document.querySelector('header');
-    const backToTop = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', function() {
-        // Header effect
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-            if (backToTop) backToTop.classList.add('active');
-        } else {
-            header.classList.remove('scrolled');
-            if (backToTop) backToTop.classList.remove('active');
-        }
-        
-        // Update active navigation based on scroll position
-        const scrollPosition = window.scrollY + window.innerHeight/2;
-        
-        // Find which section is currently in view
-        let currentSection = '';
-        document.querySelectorAll('section').forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentSection = sectionId;
-            }
-        });
-        
-        // Update the active class on navigation links
-        if (currentSection !== '') {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
+    // Append image to the div
+    div.appendChild(img);
 
-    // Back to top button
-    if (backToTop) {
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
+    // Add click event listener to the div
+    div.onclick = () => {
+      // Toggle the revealed class to remove blur
+      img.classList.toggle('revealed');
+      // Open the preview modal after showing the image
+      openPreview(src);
+    };
 
-    // Gallery lightbox functionality
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = document.querySelector('#lightbox-img');
-    const closeLightbox = document.querySelector('.close-lightbox');
-    const lightboxPrev = document.querySelector('.lightbox-prev');
-    const lightboxNext = document.querySelector('.lightbox-next');
-    let currentImgIndex = 0;
-    const galleryImages = [];
-    
-    // Collect all gallery images
-    galleryItems.forEach((item, index) => {
-        const imgSrc = item.querySelector('img').getAttribute('src');
-        galleryImages.push(imgSrc);
-        
-        // Open lightbox on click
-        item.addEventListener('click', function() {
-            lightboxImg.setAttribute('src', imgSrc);
-            currentImgIndex = index;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
-        });
-    });
-    
-    // Close lightbox
-    if (closeLightbox) {
-        closeLightbox.addEventListener('click', function() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        });
-    }
-    
-    // Lightbox navigation
-    if (lightboxPrev) {
-        lightboxPrev.addEventListener('click', function() {
-            currentImgIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
-            lightboxImg.setAttribute('src', galleryImages[currentImgIndex]);
-        });
-    }
-    
-    if (lightboxNext) {
-        lightboxNext.addEventListener('click', function() {
-            currentImgIndex = (currentImgIndex + 1) % galleryImages.length;
-            lightboxImg.setAttribute('src', galleryImages[currentImgIndex]);
-        });
-    }
-    
-    // Close lightbox with escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
+    galleryGrid.appendChild(div);
+  });
 
-    // Animate elements when they come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const elementBottom = element.getBoundingClientRect().bottom;
-            const windowHeight = window.innerHeight;
-            
-            // Check if element is in viewport
-            if (elementPosition < windowHeight - 50 && elementBottom > 0) {
-                element.classList.add('animate');
-            } else {
-                // Remove animation class when element is out of viewport
-                element.classList.remove('animate');
-            }
-        });
-    };
-    
-    // Run animation check on scroll
-    window.addEventListener('scroll', animateOnScroll);
-    
-    // Run once on page load
-    animateOnScroll();
-    
-    // Quotes slider functionality
-    const quoteItems = document.querySelectorAll('.quote-item');
-    const quoteDots = document.querySelectorAll('.quote-dots .dot');
-    let currentQuote = 0;
-    let quoteInterval;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    // Function to show a specific quote
-    const showQuote = (index) => {
-        // Get current visible quote
-        const currentVisibleQuote = document.querySelector('.quote-item[style*="position: relative"]');
-        
-        // Add transition-out animation to current quote if it exists
-        if (currentVisibleQuote) {
-            currentVisibleQuote.classList.add('quote-transition-out');
-            
-            // After animation completes, reset and hide the quote
-            setTimeout(() => {
-                currentVisibleQuote.classList.remove('quote-transition-out');
-                currentVisibleQuote.style.opacity = '0';
-                currentVisibleQuote.style.transform = 'scale(0.9) translateY(20px)';
-                currentVisibleQuote.style.position = 'absolute';
-                currentVisibleQuote.style.pointerEvents = 'none';
-            }, 800); // Match animation duration
-        }
-        
-        // Show the selected quote with transition-in animation
-        setTimeout(() => {
-            // Reset all quotes first
-            quoteItems.forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'scale(0.9) translateY(20px)';
-                item.style.position = 'absolute';
-                item.style.pointerEvents = 'none';
-                item.classList.remove('quote-transition-in');
-            });
-            
-            // Show and animate the selected quote
-            quoteItems[index].classList.add('quote-transition-in');
-            quoteItems[index].style.position = 'relative';
-            quoteItems[index].style.pointerEvents = 'auto';
-            
-            // Update active dot
-            quoteDots.forEach(dot => dot.classList.remove('active'));
-            quoteDots[index].classList.add('active');
-            
-            currentQuote = index;
-        }, currentVisibleQuote ? 400 : 0); // Slight delay if transitioning between quotes
-    };
-    
-    // Function to advance to the next quote
-    const nextQuote = () => {
-        const nextIndex = (currentQuote + 1) % quoteItems.length;
-        showQuote(nextIndex);
-    };
-    
-    // Function to go to the previous quote
-    const prevQuote = () => {
-        const prevIndex = (currentQuote - 1 + quoteItems.length) % quoteItems.length;
-        showQuote(prevIndex);
-    };
-    
-    // Function to start automatic sliding
-    const startAutoSlide = () => {
-        // Clear any existing interval first
-        if (quoteInterval) {
-            clearInterval(quoteInterval);
-        }
-        // Set new interval to change quote every 5 seconds
-        quoteInterval = setInterval(nextQuote, 5000);
-    };
-    
-    // Add click event to dots
-    quoteDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showQuote(index);
-            
-            // Clear the interval when user manually selects a quote
-            if (quoteInterval) {
-                clearInterval(quoteInterval);
-            }
-            
-            // Restart the automatic sliding after a brief pause
-            setTimeout(startAutoSlide, 5000);
-        });
+  function openPreview(src) {
+    document.getElementById('previewImg').src = src;
+    document.getElementById('imagePreviewModal').classList.remove('hidden');
+  }
+
+  function closePreview() {
+    document.getElementById('imagePreviewModal').classList.add('hidden');
+    document.getElementById('previewImg').src = '';
+    // Re-apply blur to all images when modal is closed
+    document.querySelectorAll('.blurred-image').forEach(img => {
+      img.classList.remove('revealed');
     });
-    
-    // Add touch swipe functionality for mobile devices
-    const quoteSlider = document.querySelector('.quote-slider');
-    if (quoteSlider) {
-        // Touch start event
-        quoteSlider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            
-            // Pause auto-sliding when user starts touching
-            if (quoteInterval) {
-                clearInterval(quoteInterval);
-            }
-        }, { passive: true });
-        
-        // Touch end event
-        quoteSlider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-            
-            // Restart auto-sliding after user interaction
-            setTimeout(startAutoSlide, 5000);
-        }, { passive: true });
-        
-        // Handle the swipe gesture
-        const handleSwipe = () => {
-            const swipeThreshold = 50; // Minimum distance required for a swipe
-            const swipeDistance = touchEndX - touchStartX;
-            
-            if (swipeDistance > swipeThreshold) {
-                // Swiped right - go to previous quote
-                prevQuote();
-            } else if (swipeDistance < -swipeThreshold) {
-                // Swiped left - go to next quote
-                nextQuote();
-            }
-        };
-    }
-    
-    // Initialize quotes slider
-    if (quoteItems.length > 0) {
-        showQuote(0);
-        // Start automatic sliding
-        startAutoSlide();
-    }
-});
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePreview();
+  });
