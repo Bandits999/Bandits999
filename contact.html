@@ -30,26 +30,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="shortcut icon" href="https://bandits999.vercel.app/img/Bandits-Small.jpg" type="image/x-icon">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top left, #29343f, #2b293f);
-      color: #e5e5e5;
-    }
-    .profile-ring {
-      background: linear-gradient(135deg, #5b4df5, #f5a74d);
-      padding: 3px;
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .post:hover {
-      transform: scale(1.025);
-      transition: all 0.3s ease-in-out;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen">
   <div class="max-w-5xl mx-auto px-4 pt-10 pb-24">
@@ -72,9 +53,9 @@
     <!-- Social Icons -->
     <div class="flex justify-center space-x-5 mb-10">
       <!-- <a href="#" class="text-gray-300 hover:text-[#5865F2] text-xl"><i class="fab fa-discord"></i></a> -->
-      <a href="https://www.youtube.com/@MrBroowc" class="text-gray-300 hover:text-[#FF0000] text-xl" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/999Bandits" class="text-gray-300 hover:text-[#1877F2] text-xl" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.tiktok.com/@bandits.999" class="text-gray-300 hover:text-[#FFFFFF] text-xl" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@MrBroowc" class="text-gray-300 hover:text-[#FF0000] text-xl tooltip" data-tooltip="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/999Bandits" class="text-gray-300 hover:text-[#1877F2] text-xl tooltip" data-tooltip="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@bandits.999" class="text-gray-300 hover:text-[#FFFFFF] text-xl tooltip" data-tooltip="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
 
     <!-- Contact Form -->
@@ -115,9 +96,9 @@
 
   <!-- Footer Navigation -->
     <footer class="fixed bottom-0 w-full bg-black bg-opacity-50 backdrop-blur-md py-2 px-6 flex justify-around border-t border-gray-800">
-      <a href="index.html" class="text-gray-400 hover:text-purple-500 text-xl"><i class="fas fa-home"></i></a>
-      <a href="" class="text-purple-500 text-xl"><i class="fa-solid fa-envelope"></i></a>
-      <a href="about.html" class="text-gray-400 hover:text-purple-500 text-xl"><i class="fas fa-user"></i></a>
+      <a href="index.html" class="text-gray-400 hover:text-purple-500 text-xl tooltip" data-tooltip="Home"><i class="fas fa-home"></i></a>
+      <a href="" class="text-purple-500 text-xl tooltip" data-tooltip="Contact"><i class="fa-solid fa-envelope"></i></a>
+      <a href="about.html" class="text-gray-400 hover:text-purple-500 text-xl tooltip" data-tooltip="About"><i class="fas fa-user"></i></a>
   </footer>
 
   <!-- Image Preview Modal -->
