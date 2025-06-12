@@ -45,3 +45,16 @@ const galleryImages = [
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closePreview();
   });
+
+
+// Block images inspecting
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('img').forEach(function (img) {
+    img.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  });
+});
+document.querySelectorAll('img').forEach(function (img) {
+  img.setAttribute('draggable', 'false');
+});
