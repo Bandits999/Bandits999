@@ -104,95 +104,78 @@
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2025 Bandits999. All rights reserved.</p>
-        <p> Made with <span style="color:#e1306c;">&#10084;</span> by Bandits999 Team. <br> Contact: <a href="mailto:contact@bandits999.com">contact@bandits999.com</a>
+        <p> Made with <span style="color:#e1306c;">&#10084;</span> by Bandits999. <br> Contact: <a href="mailto:bandits999@proton.me">Bandits999</a>
         </p>
-        <div class="footer-social">
-          <a href="https://t.me/bandits999" target="_blank" title="Telegram">
-            <i class="fab fa-telegram"></i>
-          </a>
-          <a href="https://github.com/bandits999" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://instagram.com/bandits999" target="_blank" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
       </div>
     </footer>
     <script>
-document.querySelectorAll('.btn-wrapper').forEach(function(wrapper) {
-  let timeout;
+      document.querySelectorAll('.btn-wrapper').forEach(function(wrapper) {
+        let timeout;
 
-  // Untuk hover (desktop)
-  wrapper.addEventListener('mouseenter', function() {
-    clearTimeout(timeout);
-    wrapper.classList.add('show-popup');
-  });
-  wrapper.addEventListener('mouseleave', function() {
-    timeout = setTimeout(() => {
-      wrapper.classList.remove('show-popup');
-    }, 220); // delay hilang 220ms
-  });
+        wrapper.addEventListener('mouseenter', function() {
+          clearTimeout(timeout);
+          wrapper.classList.add('show-popup');
+        });
+        wrapper.addEventListener('mouseleave', function() {
+          timeout = setTimeout(() => {
+            wrapper.classList.remove('show-popup');
+          }, 220); 
+        });
 
-  // Untuk klik (mobile/tablet)
-  const btn = wrapper.querySelector('.btn');
-  if (btn) {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      // Tutup popup lain
-      document.querySelectorAll('.btn-wrapper').forEach(function(w) {
-        if (w !== wrapper) w.classList.remove('show-popup');
+        const btn = wrapper.querySelector('.btn');
+        if (btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+
+            document.querySelectorAll('.btn-wrapper').forEach(function(w) {
+              if (w !== wrapper) w.classList.remove('show-popup');
+            });
+            wrapper.classList.toggle('show-popup');
+          });
+        }
+
+        const popup = wrapper.querySelector('.popup');
+        if (popup) {
+          popup.addEventListener('click', function(e) {
+            e.stopPropagation();
+          });
+        }
       });
-      wrapper.classList.toggle('show-popup');
-    });
-  }
 
-  // Agar klik di dalam popup tidak menutup popup
-  const popup = wrapper.querySelector('.popup');
-  if (popup) {
-    popup.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-  }
-});
+      document.addEventListener('click', function() {
+        document.querySelectorAll('.btn-wrapper').forEach(function(w) {
+          w.classList.remove('show-popup');
+        });
+      });
 
-// Klik di luar popup untuk menutup semua
-document.addEventListener('click', function() {
-  document.querySelectorAll('.btn-wrapper').forEach(function(w) {
-    w.classList.remove('show-popup');
-  });
-});
-
-function isMobile() {
-  return window.innerWidth <= 600;
-}
-
-document.querySelectorAll('.btn-wrapper .btn').forEach(function(btn) {
-  // Ambil link dari data-link atau atribut lain sesuai kebutuhan
-  let link = btn.getAttribute('data-link');
-  if (!link) {
-    // Coba ambil dari popup follow-btn jika ada
-    let popupBtn = btn.parentElement.querySelector('.follow-btn');
-    if (popupBtn) link = popupBtn.getAttribute('data-link');
-  }
-  if (link) {
-    btn.addEventListener('click', function(e) {
-      if (isMobile()) {
-        window.open(link, '_blank');
+      function isMobile() {
+        return window.innerWidth <= 600;
       }
-    });
-  }
-});
+      document.querySelectorAll('.btn-wrapper .btn').forEach(function(btn) {
 
-document.querySelectorAll('.follow-btn').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    var link = btn.getAttribute('data-link');
-    if (link) {
-      window.open(link, '_blank');
-    }
-    e.stopPropagation(); // agar popup tidak langsung tertutup
-  });
-});
+        let link = btn.getAttribute('data-link');
+        if (!link) {
+
+          let popupBtn = btn.parentElement.querySelector('.follow-btn');
+          if (popupBtn) link = popupBtn.getAttribute('data-link');
+        }
+        if (link) {
+          btn.addEventListener('click', function(e) {
+            if (isMobile()) {
+              window.open(link, '_blank');
+            }
+          });
+        }
+      });
+      document.querySelectorAll('.follow-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          var link = btn.getAttribute('data-link');
+          if (link) {
+            window.open(link, '_blank');
+          }
+          e.stopPropagation(); 
+        });
+      });
     </script>
   </body>
 </html>
