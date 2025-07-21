@@ -1,48 +1,377 @@
+:root {
+  --bg: #1e1e20;
+  --text: #ffffff;
+  --facebook: #3b5a99;
+  --instagram: #e1306c;
+  --youtube: #e62017;
+  --tiktok: #010101;
+  --github: #333;
+}
+* {
+  box-sizing: border-box;
+}
 body {
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top left, #29343f, #2b293f);
-    color: #e5e5e5;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.profile-ring {
-    background: linear-gradient(135deg, #5b4df5, #f5a74d);
-    padding: 3px;
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+h1 {
+  font-size: 64px;
+  margin-bottom: 0;
+  background: url("https://static.vecteezy.com/system/resources/previews/015/766/295/non_2x/black-abstract-blurry-background-with-gradients-of-pink-blue-and-green-colors-free-vector.jpg")
+    center/cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.post:hover {
-    transform: scale(1.025);
-    transition: all 0.3s ease-in-out;
+h2 {
+  font-weight: 400;
+  margin-bottom: 40px;
 }
-.tooltip {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
+.section {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 720px;
+  margin-bottom: 2rem;
+  position: relative;
 }
-
-.tooltip i {
-    transition: color 0.3s;
+.section h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
-
-.tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #cccccc;
-    color: #000000;
-    padding: 0 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
-
-.tooltip:hover::after {
-    opacity: 1;
+.btn-wrapper {
+  position: relative;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #2a2a2d;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 0.9rem;
+  position: relative;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.facebook {
+  background: var(--facebook);
+}
+.instagram {
+  background: var(--instagram);
+}
+.youtube {
+  background: var(--youtube);
+}
+.tiktok {
+  background: var(--tiktok);
+  color: white;
+}
+.github {
+  background: var(--github);
+  color: white;
+}
+.popup {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95) translateX(-50%);
+  transition: opacity 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  z-index: 9999;
+  min-width: 280px;
+  max-width: 90vw;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  visibility: hidden;
+}
+.btn-wrapper.show-popup .popup,
+.btn-wrapper:hover .popup,
+.btn-wrapper:focus-within .popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateX(-50%);
+  visibility: visible;
+  transition-delay: 0s;
+}
+.btn-wrapper .popup {
+  transition-delay: 0s, 0.18s;
+}
+.btn-wrapper .popup.show {
+  display: block;
+}
+.popup.facebook {
+  background-color: var(--facebook);
+}
+.popup.instagram {
+  background-color: var(--instagram);
+}
+.popup.youtube {
+  background-color: var(--youtube);
+}
+.popup.tiktok {
+  background-color: #111;
+  color: white;
+}
+.popup.github {
+  background-color: var(--github);
+  color: white;
+}
+.popup .banner {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+}
+.popup-content {
+  padding: 1rem;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: -30px;
+  border: 3px solid white;
+}
+.main-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #232326;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  background: #232326;
+}
+.popup h4 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1rem;
+}
+.popup p {
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+}
+.follow-btn {
+  margin-top: 0.5rem;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.big-button {
+  margin-top: 3rem;
+  padding: 14px 28px;
+  border: 2px solid white;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.big-button:hover {
+  background: white;
+  color: black;
+}
+.site-footer {
+  width: 100%;
+  color: #bbb;
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+.site-footer a {
+  color: #e1306c;
+  text-decoration: none;
+  margin: 0 0.3em;
+  transition: color 0.2s;
+}
+.site-footer a:hover {
+  color: #fff;
+}
+.footer-social {
+  margin-top: 1rem;
+}
+.footer-social a {
+  font-size: 1.4rem;
+  margin: 0 0.5rem;
+  color: #bbb;
+  transition: color 0.2s;
+}
+.footer-social a:hover {
+  color: #fff;
+}
+.profile-header {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-banner {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  display: block;
+}
+.avatar-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.main-content > h1 {
+  margin-top: 80px;
+}
+@media (max-width: 900px) {
+  .profile-header {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  .main-banner {
+    height: 120px;
+    border-radius: 16px 16px 0 0;
+  }
+  .main-avatar {
+    width: 110px;
+    height: 110px;
+  }
+  .avatar-wrapper {
+    bottom: -55px;
+  }
+  .main-content > h1 {
+    margin-top: 60px;
+    font-size: 2.5rem;
+  }
+  .section {
+    max-width: 98vw;
+    padding: 0 2vw;
+  }
+}
+@media (max-width: 600px) {
+  .profile-header {
+    max-width: 100%;
+    padding: 0 2vw;
+  }
+  .main-banner {
+    height: 70px;
+    border-radius: 10px 10px 0 0;
+  }
+  .main-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .avatar-wrapper {
+    bottom: -35px;
+  }
+  .main-content > h1 {
+    margin-top: 40px;
+    font-size: 1.5rem;
+  }
+  .main-content > h2 {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+  }
+  .section {
+    width: 100%;
+    max-width: 100vw;
+    padding: 0 2vw;
+  }
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .popup .banner {
+    height: 50px;
+  }
+  .popup-content {
+    padding: 0.7rem;
+  }
+  .avatar {
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+  }
+  .site-footer {
+    font-size: 0.85rem;
+    padding: 1.2rem 0 0.7rem 0;
+  }
+  .footer-social a {
+    font-size: 1.1rem;
+    margin: 0 0.3rem;
+  }
+}
+@media (max-width: 400px) {
+  .main-banner {
+    height: 40px;
+  }
+  .main-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .avatar-wrapper {
+    bottom: -20px;
+  }
+  .main-content > h1 {
+    margin-top: 22px;
+    font-size: 1rem;
+  }
+  .main-content > h2 {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 600px) {
+  .popup {
+    display: none !important;
+  }
 }
