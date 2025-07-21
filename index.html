@@ -1,126 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Bandits 999 – Official Website">
-    <meta name="description" content="Beat the odds and become a champion.">
-    <!-- Canonical URL -->
-    <link rel="canonical" href="bandits999.vercel.app" />
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="bandits999.vercel.app">
-    <meta property="og:title" content="Bandits 999 – Official Website">
-    <meta property="og:description" content="Beat the odds and become a champion.">
-    <meta property="og:image" content="https://bandits999.vercel.app/img/Bandits-Small.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="bandits999.vercel.app">
-    <meta property="twitter:title" content="Bandits 999 – Official Website">
-    <meta property="twitter:description" content="Beat the odds and become a champion.">
-    <meta property="twitter:image" content="https://bandits999.vercel.app/img/Bandits-Small.jpg">
-
-    <!-- Robots -->
-    <meta name="robots" content="index, follow">
-    <title>Bandits 999</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="shortcut icon" href="https://bandits999.vercel.app/img/Bandits-Small.jpg" type="image/x-icon">
+    <title>Bandits999 - Official Website</title>
+    <meta name="description" content="Bandits999 Official Website. Follow us on social media, watch our videos, and join our community!">
+    <meta name="keywords" content="Bandits999, Bandits99, official, social media, YouTube, Instagram, TikTok, GitHub, Telegram">
+    <meta name="author" content="Bandits999 Team">
+    <meta property="og:title" content="Bandits999 - Official Website">
+    <meta property="og:description" content="Follow Bandits999 on all platforms. Join our community!">
+    <meta property="og:image" content="https://placehold.co/300x80?text=Bandits999">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://yourdomain.com/" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-          font-family: 'Inter', sans-serif;
-          background: radial-gradient(circle at top left, #29343f, #2b293f);
-          color: #e5e5e5;
-        }
-        .profile-ring {
-          background: linear-gradient(135deg, #5b4df5, #f5a74d);
-          padding: 3px;
-        }
-        .glass-card {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .post:hover {
-          transform: scale(1.025);
-          transition: all 0.3s ease-in-out;
-        }
-        .blurred-image {
-          filter: blur(10px) brightness(50%);
-          transition: filter 0.3s ease-in-out;
-        }
-        .blurred-image.revealed {
-          filter: blur(0) brightness(100%);
-        }
-    </style>
-</head>
-
-<body class="min-h-screen">
-    <div class="max-w-5xl mx-auto px-4 pt-10 pb-24">
-        <!-- Profile -->
-        <div class="flex flex-col items-center text-center mb-8">
-            <div class="profile-ring rounded-full mb-4 cursor-pointer" onclick="openPreview(this.querySelector('img').src)">
-                <img src="https://bandits999.vercel.app/img/Bandits-Small.jpg" class="w-24 h-24 rounded-full object-cover" alt="Bandits 999" loading="lazy" />
-            </div>
-            <div class="flex items-center mb-1">
-                <h1 class="text-xl font-semibold mr-2">Bandits 999</h1>
-                <i class="fas fa-check-circle text-blue-500"></i>
-            </div>
-            <p class="text-gray-400 max-w-sm">
-                Gamers - Lowlife
-                <br />Beat the odds and become a champion.
-            </p>
+    <link rel="icon" href="img/Bandits-600.png" type="image/png">
+  </head>
+  <body>
+    <main class="main-content">
+      <div class="profile-header">
+        <img src="img/Bandits-Banner.jpg" alt="Bandits999 Banner" class="main-banner" />
+        <div class="avatar-wrapper">
+          <img src="img/Bandits-600.png" alt="Bandits999 Avatar" class="main-avatar" />
         </div>
-
-        <!-- Social Icons -->
-    <div class="flex justify-center space-x-5 mb-10">
-      <!-- <a href="#" class="text-gray-300 hover:text-[#5865F2] text-xl"><i class="fab fa-discord"></i></a> -->
-      <a href="https://www.youtube.com/@MrBroowc" class="text-gray-300 hover:text-[#FF0000] text-xl tooltip" data-tooltip="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/999Bandits" class="text-gray-300 hover:text-[#1877F2] text-xl tooltip" data-tooltip="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.tiktok.com/@bandits.999" class="text-gray-300 hover:text-[#FFFFFF] text-xl tooltip" data-tooltip="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </div>
-
-        <!-- Grid Gallery -->
-        <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 gap-2 mb-10">
-            <!-- Images will be injected here by JavaScript -->
+      </div>
+      <h1>Bandits999</h1>
+      <h2>Welcome To Bandits999 Official Website!</h2>
+      <div class="section">
+        <h3>
+          <i class="fa-solid fa-user-plus"></i> Follow me on
+        </h3>
+        <div class="btn-group">
+          <div class="btn-wrapper">
+            <button class="btn facebook">
+              <i class="fab fa-facebook-f"></i> Facebook </button>
+            <div class="popup facebook">
+              <img class="banner" src="img/facebook.png" alt="Bandits999 Banner">
+              <div class="popup-content">
+                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
+                <h4>Facebook</h4>
+                <p>Follow us on Facebook for updates, news, and events.</p>
+                <button class="follow-btn" data-link="https://www.facebook.com/999Bandits">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn instagram">
+              <i class="fab fa-instagram"></i> Instagram </button>
+            <div class="popup instagram">
+              <img class="banner" src="img/instagram.jpg" alt="Bandits999 Instagram">
+              <div class="popup-content">
+                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
+                <h4>Instagram</h4>
+                <p>Catch behind-the-scenes and lifestyle content on IG.</p>
+                <button class="follow-btn" data-link="https://instagram.com/999bandits">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn youtube">
+              <i class="fab fa-youtube"></i> Youtube </button>
+            <div class="popup youtube">
+              <img class="banner" src="img/youtube.jpg" alt="Bandits999 YouTube">
+              <div class="popup-content">
+                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
+                <h4>YouTube</h4>
+                <p>Watch all our video content and streams on YouTube.</p>
+                <button class="follow-btn" data-link="https://www.youtube.com/@Bandits.999">Subscribe</button>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn tiktok">
+              <i class="fab fa-tiktok"></i> TikTok </button>
+            <div class="popup tiktok">
+              <img class="banner" src="img/tiktok.png" alt="Bandits999 TikTok">
+              <div class="popup-content">
+                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
+                <h4>TikTok</h4>
+                <p>Fun, short videos and highlights just for you.</p>
+                <button class="follow-btn" data-link="https://www.tiktok.com/@bandits.999">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn github">
+              <i class="fab fa-github"></i> Github </button>
+            <div class="popup github">
+              <img class="banner" src="img/github.png" alt="Bandits999 Github">
+              <div class="popup-content">
+                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
+                <h4>GitHub</h4>
+                <p>Check out our open-source projects and repos.</p>
+                <button class="follow-btn" data-link="https://github.com/MrBroowc">Star</button>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <!-- Latest Blog Posts -->
-        <h2 class="text-lg font-semibold mb-4">Latest Posts</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-            <div class="post glass-card rounded-xl p-4">
-                <img src="img/Bandits-Banner.jpg" alt="Bandits 999" loading="lazy" class="w-full h-48 object-cover rounded-lg mb-4" />
-                <h3 class="text-xl font-bold mb-2">My Journey as a Digital Creator</h3>
-                <p class="text-gray-400 text-sm">Discover the ups and downs, challenges and triumphs of my path in the digital world.</p>
-                <a href="post/my-journey-as-a-digital-creator.html" class="text-purple-500 text-sm mt-2 inline-block">Read More &rarr;</a>
-            </div>
-            <div class="post glass-card rounded-xl p-4">
-                <img src="img/Bandits-Banner.jpg" alt="Bandits 999" loading="lazy" class="w-full h-48 object-cover rounded-lg mb-4" />
-                <h3 class="text-xl font-bold mb-2">Top Gaming Setups for Streamers</h3>
-                <p class="text-gray-400 text-sm">Level up your streaming game with these essential gear recommendations.</p>
-                <a href="post/top-5-gaming-setups-for-streamers.html" class="text-purple-500 text-sm mt-2 inline-block">Read More &rarr;</a>
-            </div>
-            </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Bandits999. All rights reserved.</p>
+        <p> Made with <span style="color:#e1306c;">&#10084;</span> by Bandits999 Team. <br> Contact: <a href="mailto:contact@bandits999.com">contact@bandits999.com</a>
+        </p>
+        <div class="footer-social">
+          <a href="https://t.me/bandits999" target="_blank" title="Telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://github.com/bandits999" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://instagram.com/bandits999" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
-    </div>
-
-    <!-- Footer Navigation -->
-    <footer class="fixed bottom-0 w-full bg-black bg-opacity-50 backdrop-blur-md py-2 px-6 flex justify-around border-t border-gray-800">
-        <a href="" class="text-purple-500 text-xl tooltip" data-tooltip="Home"><i class="fas fa-home"></i></a>
-        <a href="contact.html" class="text-gray-400 hover:text-purple-500 text-xl tooltip" data-tooltip="Contact"><i class="fa-solid fa-envelope"></i></a>
-        <a href="about.html" class="text-gray-400 hover:text-purple-500 text-xl tooltip" data-tooltip="About"><i class="fas fa-user"></i></a>
+      </div>
     </footer>
+    <script>
+document.querySelectorAll('.btn-wrapper').forEach(function(wrapper) {
+  let timeout;
 
-    <!-- Image Preview Modal -->
-    <div id="imagePreviewModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 hidden" onclick="if(event.target===this)closePreview()">
-        <span class="absolute top-5 right-8 text-white text-3xl cursor-pointer" onclick="closePreview()">&times;</span>
-        <img id="previewImg" src="" class="max-w-full max-h-[80vh] rounded-lg shadow-2xl border-4 border-white" />
-    </div>
-</body>
-<script src="script.js"></script>
+  // Untuk hover (desktop)
+  wrapper.addEventListener('mouseenter', function() {
+    clearTimeout(timeout);
+    wrapper.classList.add('show-popup');
+  });
+  wrapper.addEventListener('mouseleave', function() {
+    timeout = setTimeout(() => {
+      wrapper.classList.remove('show-popup');
+    }, 220); // delay hilang 220ms
+  });
 
+  // Untuk klik (mobile/tablet)
+  const btn = wrapper.querySelector('.btn');
+  if (btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      // Tutup popup lain
+      document.querySelectorAll('.btn-wrapper').forEach(function(w) {
+        if (w !== wrapper) w.classList.remove('show-popup');
+      });
+      wrapper.classList.toggle('show-popup');
+    });
+  }
+
+  // Agar klik di dalam popup tidak menutup popup
+  const popup = wrapper.querySelector('.popup');
+  if (popup) {
+    popup.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
+});
+
+// Klik di luar popup untuk menutup semua
+document.addEventListener('click', function() {
+  document.querySelectorAll('.btn-wrapper').forEach(function(w) {
+    w.classList.remove('show-popup');
+  });
+});
+
+function isMobile() {
+  return window.innerWidth <= 600;
+}
+
+document.querySelectorAll('.btn-wrapper .btn').forEach(function(btn) {
+  // Ambil link dari data-link atau atribut lain sesuai kebutuhan
+  let link = btn.getAttribute('data-link');
+  if (!link) {
+    // Coba ambil dari popup follow-btn jika ada
+    let popupBtn = btn.parentElement.querySelector('.follow-btn');
+    if (popupBtn) link = popupBtn.getAttribute('data-link');
+  }
+  if (link) {
+    btn.addEventListener('click', function(e) {
+      if (isMobile()) {
+        window.open(link, '_blank');
+      }
+    });
+  }
+});
+
+document.querySelectorAll('.follow-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    var link = btn.getAttribute('data-link');
+    if (link) {
+      window.open(link, '_blank');
+    }
+    e.stopPropagation(); // agar popup tidak langsung tertutup
+  });
+});
+    </script>
+  </body>
 </html>
