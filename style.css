@@ -227,18 +227,6 @@ h2 {
 .site-footer a:hover {
   color: #fff;
 }
-.footer-social {
-  margin-top: 1rem;
-}
-.footer-social a {
-  font-size: 1.4rem;
-  margin: 0 0.5rem;
-  color: #bbb;
-  transition: color 0.2s;
-}
-.footer-social a:hover {
-  color: #fff;
-}
 .profile-header {
   position: relative;
   width: 100%;
@@ -345,10 +333,6 @@ h2 {
   .site-footer {
     font-size: 0.85rem;
     padding: 1.2rem 0 0.7rem 0;
-  }
-  .footer-social a {
-    font-size: 1.1rem;
-    margin: 0 0.3rem;
   }
 }
 @media (max-width: 400px) {
