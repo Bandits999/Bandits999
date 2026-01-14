@@ -1,182 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bandits999 - Official Website</title>
-    <meta name="description" content="Bandits999 Official Website. Follow us on social media, watch our videos, and join our community!">
-    <meta name="keywords" content="Bandits999, Bandits99, official, social media, YouTube, Instagram, TikTok, GitHub, Telegram">
-    <meta name="author" content="Bandits999 Team">
-    <meta property="og:title" content="Bandits999 - Official Website">
-    <meta property="og:description" content="Follow Bandits999 on all platforms. Join our community!">
-    <meta property="og:image" content="https://bandits999.vercel.app/img/Bandits-Banner.jpg">
-    <meta property="og:url" content="https://bandits999.vercel.app/">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://bandits999.vercel.app/" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.cdnfonts.com/css/noto-serif-jp" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sawarabi-gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://bandits999.vercel.app/img/Bandits-600.png" type="image/png">
-  </head>
-  <body>
-    <main class="main-content">
-      <div class="profile-header">
-        <img src="img/Bandits-Banner.jpg" alt="Bandits999 Banner" class="main-banner" />
-        <div class="avatar-wrapper">
-          <img src="img/Bandits-600.png" alt="Bandits999 Avatar" class="main-avatar" />
+</head>
+<body>
+<div class="wrap">
+  <div class="bg">
+    <div class="layi">
+      <!-- =========================  LEFT NAVIGATION ========================= -->
+      <aside class="sidebar">
+        <div class="inside navarea">
+          <!-- Fan Icon -->
+          <div class="fanButton">
+            <img src="img/menu.png" style="filter: invert(1);">
+          </div>
+          <div class="navLabel">Menu</div>
+          <!-- Navigation -->
+          <div class="navigation">
+            <button onclick="changeMahri('tabHome')">Home</button>
+            <button onclick="changeMahri('tabRelations')">Relations</button>
+            <button onclick="changeMahri('tabGallery')">Gallery</button>
+            <button onclick="changeMahri('tabTraits')">Wraith</button>
+          </div>
         </div>
-      </div>
-      <h1>Bandits999</h1>
-      <h2>Welcome To Bandits999 Official Website!</h2>
-      <div class="section">
-        <h3>
-          <i class="fa-solid fa-user-plus"></i> Follow me on
-        </h3>
-        <div class="btn-group">
-          <div class="btn-wrapper">
-            <button class="btn facebook">
-              <i class="fab fa-facebook-f"></i> Facebook </button>
-            <div class="popup facebook">
-              <img class="banner" src="img/facebook.png" alt="Bandits999 Banner">
-              <div class="popup-content">
-                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
-                <h4>Facebook</h4>
-                <p>Follow us on Facebook for updates, news, and events.</p>
-                <button class="follow-btn" data-link="https://www.facebook.com/">Follow</button>
+      </aside>
+      <!-- ========================= RIGHT SIDE ========================= -->
+      <section class="main">
+        <!--  HEADER -->
+        <div class="headerwrap">
+          <div class="header">
+            <div class="headerimg" style="--img: url(img/banner.jpg)center/cover;"></div>
+            <div class="headerbar">
+              <div>
+                <!-- Edit character name here -->
+                <h1 class="characterName">Bandits 999</h1>
+                <div class="characterSubtitle">i'm still sad as a bitch</div>
               </div>
-            </div>
-          </div>
-          <div class="btn-wrapper">
-            <button class="btn instagram">
-              <i class="fab fa-instagram"></i> Instagram </button>
-            <div class="popup instagram">
-              <img class="banner" src="img/instagram.jpg" alt="Bandits999 Instagram">
-              <div class="popup-content">
-                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
-                <h4>Instagram</h4>
-                <p>Catch behind-the-scenes and lifestyle content on IG.</p>
-                <button class="follow-btn" data-link="https://instagram.com/">Follow</button>
-              </div>
-            </div>
-          </div>
-          <div class="btn-wrapper">
-            <button class="btn youtube">
-              <i class="fab fa-youtube"></i> Youtube </button>
-            <div class="popup youtube">
-              <img class="banner" src="img/youtube.jpg" alt="Bandits999 YouTube">
-              <div class="popup-content">
-                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
-                <h4>YouTube</h4>
-                <p>Watch all our video content and streams on YouTube.</p>
-                <button class="follow-btn" data-link="https://www.youtube.com/@Bandits.999">Subscribe</button>
-              </div>
-            </div>
-          </div>
-          <div class="btn-wrapper">
-            <button class="btn tiktok">
-              <i class="fab fa-tiktok"></i> TikTok </button>
-            <div class="popup tiktok">
-              <img class="banner" src="img/tiktok.png" alt="Bandits999 TikTok">
-              <div class="popup-content">
-                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
-                <h4>TikTok</h4>
-                <p>Fun, short videos and highlights just for you.</p>
-                <button class="follow-btn" data-link="https://www.tiktok.com/@bandits.999">Follow</button>
-              </div>
-            </div>
-          </div>
-          <div class="btn-wrapper">
-            <button class="btn github">
-              <i class="fab fa-github"></i> Github </button>
-            <div class="popup github">
-              <img class="banner" src="img/github.png" alt="Bandits999 Github">
-              <div class="popup-content">
-                <img class="avatar" src="img/Bandits-600.jpg" alt="Bandits999 Avatar">
-                <h4>GitHub</h4>
-                <p>Check out our open-source projects and repos.</p>
-                <button class="follow-btn" data-link="https://github.com/Bandits999">Star</button>
+              <!-- Edit quick tags here -->
+              <div class="headertags">
+                <div class="tag" id="ageTag">Age • --</div>
+                <div class="tag">Clan • Uchiha</div>
+                <div class="tag">Job • Sleep</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-    <footer class="site-footer">
-      <div class="footer-content">
-        <p>&copy; 2025 Bandits999. All rights reserved.</p>
-        <p> Made with <span style="color:#e1306c;">&#10084;</span> by Bandits999. <br> Contact: bandits999@proton.me
-        </p>
-      </div>
-    </footer>
-    <script>
-      document.querySelectorAll('.btn-wrapper').forEach(function(wrapper) {
-        let timeout;
-
-        wrapper.addEventListener('mouseenter', function() {
-          clearTimeout(timeout);
-          wrapper.classList.add('show-popup');
-        });
-        wrapper.addEventListener('mouseleave', function() {
-          timeout = setTimeout(() => {
-            wrapper.classList.remove('show-popup');
-          }, 220); 
-        });
-
-        const btn = wrapper.querySelector('.btn');
-        if (btn) {
-          btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-
-            document.querySelectorAll('.btn-wrapper').forEach(function(w) {
-              if (w !== wrapper) w.classList.remove('show-popup');
-            });
-            wrapper.classList.toggle('show-popup');
-          });
-        }
-
-        const popup = wrapper.querySelector('.popup');
-        if (popup) {
-          popup.addEventListener('click', function(e) {
-            e.stopPropagation();
-          });
-        }
-      });
-
-      document.addEventListener('click', function() {
-        document.querySelectorAll('.btn-wrapper').forEach(function(w) {
-          w.classList.remove('show-popup');
-        });
-      });
-
-      function isMobile() {
-        return window.innerWidth <= 600;
-      }
-      document.querySelectorAll('.btn-wrapper .btn').forEach(function(btn) {
-
-        let link = btn.getAttribute('data-link');
-        if (!link) {
-
-          let popupBtn = btn.parentElement.querySelector('.follow-btn');
-          if (popupBtn) link = popupBtn.getAttribute('data-link');
-        }
-        if (link) {
-          btn.addEventListener('click', function(e) {
-            if (isMobile()) {
-              window.open(link, '_blank');
-            }
-          });
-        }
-      });
-      document.querySelectorAll('.follow-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          var link = btn.getAttribute('data-link');
-          if (link) {
-            window.open(link, '_blank');
-          }
-          e.stopPropagation(); 
-        });
-      });
-    </script>
-  </body>
+        <!-- CONTENT AREA -->
+        <div class="content">
+          <!-- ========================= HOME / MAIN  ========================= -->
+          <div class="tabContent isActive" id="tabHome">
+            <div class="sectionGrid">
+              <!-- Left  -->
+              <div class="panel">
+                <div class="panelHeader">
+                  <h2>Home</h2>
+                  <span>overview</span>
+                </div>
+                <div class="panelBody">
+                  <!-- Mood strip image -->
+                  <div class="imageBlock imageWide" style="background:
+                    linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.1)),
+                    url('img/staywme.gif') center/cover no-repeat;">
+                    <div class="imageCaption">1nonly • stay with me</div>
+                  </div>
+                  <p style="margin: 12px 0 10px;"> Welcome to my little corner of the internet. It’s nothing fancy—just a place where I dump stories, games, and random ideas. Stay for a while… or leave quietly. I won’t judge. Probably.
+                  <div class="divider"></div> This site is just me being me. No perfection, no grand plans. Just a human trying to build something, one level at a time. </p>
+                  <div class="quote"> Every page here is a checkpoint. Some are messy, some are empty—but each one means I kept moving. </div>
+                  <!-- Second mood strip -->
+                  <div class="imageBlock imageWide" style="margin-top:12px; background:
+                    linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                    url('img/bunnygirl.webp') center/cover no-repeat;">
+                    <div class="imageCaption">1nonly • bunny girl</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Right -->
+              <div class="panel">
+                <div class="panelHeader">
+                  <h2>Character Card</h2>
+                  <span>details</span>
+                </div>
+                <div class="panelBody">
+                  <!-- Portrait -->
+                  <div class="imageBlock imageMain" style="background:
+                    linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.1)),
+                    url('img/bandits999.webp') center/cover no-repeat;">
+                    <div class="imageCaption">bandits • 999</div>
+                  </div>
+                  <!-- Chart  -->
+                  <div class="details" style="margin-top:12px;">
+                    <div class="detailRow">
+                      <div class="detailItem">Name</div>
+                      <div class="detailValue">Bandits</div>
+                    </div>
+                    <div class="detailRow">
+                      <div class="detailItem">Age</div>
+                      <div class="detailValue" id="ageValue">—</div>
+                    </div>
+                    <div class="detailRow">
+                      <div class="detailItem">Status</div>
+                      <div class="detailValue">Single</div>
+                    </div>
+                    <div class="detailRow">
+                      <div class="detailItem">Discord</div>
+                      <div class="detailValue">999bandits</div>
+                    </div>
+                    <div class="detailRow">
+                      <div class="detailItem">Phone</div>
+                      <div class="detailValue">+62 82211672275</div>
+                    </div>
+                    <div class="detailRow">
+                      <div class="detailItem">Occupation</div>
+                      <div class="detailValue">unEmployedEnjoyer</div>
+                    </div>
+                    <div class="detailRow">
+                      <div class="detailItem">Hobbies</div>
+                      <div class="detailValue">Gaming</div>
+                    </div>
+                    <!-- Add as much as you like -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ========================= RELATIONS ========================= -->
+          <div class="tabContent" id="tabRelations">
+            <div class="panel">
+              <div class="panelHeader">
+                <h2>Relations</h2>
+                <span>family • friends • situationships</span>
+              </div>
+              <div class="panelBody relationsStack">
+                <!-- ========================= RELATION 1  ========================= -->
+                <div class="relationEntry">
+                  <div class="relationEntryHeader">
+                    <div>Character</div>
+                    <div>status</div>
+                  </div>
+                  <div class="relationEntryBody">
+                    <div class="relationLeft">
+                      <div class="relationAvatarLarge" style="background:
+              linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+              url('img/bunnygirl.webp') center/cover no-repeat;"></div>
+                      <div class="relationIdentity">
+                        <div class="relationNameLine">
+                          <p class="relationName">Hatsumomo</p>
+                          <span class="relationType">Rival</span>
+                        </div>
+                        <p class="relationQuote">何度失敗しても決して諦めずに、その都度立ち直って努力し続ける精神（レジリエンス、不屈の精神）を表現</p>
+                      </div>
+                    </div>
+                    <div class="relationRight">
+                      <div class="relationTextScroll"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </div>
+                      <div class="relationMoments">
+                        <h4>Key moments</h4>
+                        <p>• moment <br>• moment <br>• moment </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ========================= RELATION 2 ========================= -->
+                <div class="relationEntry">
+                  <div class="relationEntryHeader">
+                    <div>Character</div>
+                    <div>status</div>
+                  </div>
+                  <div class="relationEntryBody">
+                    <div class="relationLeft">
+                      <div class="relationAvatarLarge" style="background:
+              linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+              url('img/staywme.gif') center/cover no-repeat;"></div>
+                      <div class="relationIdentity">
+                        <div class="relationNameLine">
+                          <p class="relationName">Mameha</p>
+                          <span class="relationType">Mentor</span>
+                        </div>
+                        <p class="relationQuote">何度失敗しても決して諦めずに、その都度立ち直って努力し続ける精神（レジリエンス、不屈の精神）を表現</p>
+                      </div>
+                    </div>
+                    <div class="relationRight">
+                      <div class="relationTextScroll"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </div>
+                      <div class="relationMoments">
+                        <h4>Key moments</h4>
+                        <p>• moment <br>• moment <br>• moment </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Add more relationEntry blocks as needed -->
+              </div>
+            </div>
+          </div>
+          <!-- ========================= GALLERY  ========================= -->
+          <div class="tabContent" id="tabGallery">
+            <div class="panel">
+              <div class="panelHeader">
+                <h2>Gallery</h2>
+                <span>masonry</span>
+              </div>
+              <div class="panelBody">
+                <div class="masonry">
+                  <div class="masonryItem">
+                    <div class="imageBlock imageWide" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/bandits999.webp') center/cover no-repeat;">
+                      <div class="imageCaption">bandits999</div>
+                    </div>
+                  </div>
+                  <div class="masonryItem">
+                    <div class="imageBlock imageSquare" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/staywme.jpg') center/cover no-repeat;">
+                      <div class="imageCaption">staywme</div>
+                    </div>
+                  </div>
+                  <div class="masonryItem">
+                    <div class="imageBlock imageSquare" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/bunnygirl.webp') center/cover no-repeat;">
+                      <div class="imageCaption">bunny girl</div>
+                    </div>
+                  </div>
+                  <div class="masonryItem">
+                    <div class="imageBlock imageWide" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/wraith3.gif') center/cover no-repeat;">
+                      <div class="imageCaption">kunai</div>
+                    </div>
+                  </div>
+                  <div class="masonryItem">
+                    <div class="imageBlock imageSquare" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/wraith2.jpg') center/cover no-repeat;">
+                      <div class="imageCaption">wraith</div>
+                    </div>
+                  </div>
+                  <div class="masonryItem">
+                    <div class="imageBlock imageSquare" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/wraith4.jpg') center/cover no-repeat;">
+                      <div class="imageCaption">wraith</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ========================= TRAITS ========================= -->
+          <div class="tabContent" id="tabTraits">
+            <div class="sectionGrid">
+              <!-- Left -->
+              <div class="panel">
+                <div class="panelHeader">
+                  <h2>Traits</h2>
+                  <span>meters & preferences</span>
+                </div>
+                <div class="panelBody">
+                  <!-- meters  -->
+                  <div class="meterGroup">
+                    <div class="barMeter" style="--value: 78;">
+                      <div class="barTop">
+                        <div class="barTitle">VOID MASTERY</div>
+                        <div class="barValue">85%</div>
+                      </div>
+                      <div class="barTrack">
+                        <div class="barFill"></div>
+                      </div>
+                    </div>
+                    <div class="barMeter" style="--value: 62;">
+                      <div class="barTop">
+                        <div class="barTitle">SURVIVAL INSTINCT</div>
+                        <div class="barValue">78%</div>
+                      </div>
+                      <div class="barTrack">
+                        <div class="barFill"></div>
+                      </div>
+                    </div>
+                    <div class="barMeter" style="--value: 62;">
+                      <div class="barTop">
+                        <div class="barTitle">FOCUS</div>
+                        <div class="barValue">64%</div>
+                      </div>
+                      <div class="barTrack">
+                        <div class="barFill"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Likes / Dislikes -->
+                  <div class="splitColumns" style="margin-top:12px;">
+                    <div class="list">
+                      <h3>Likes</h3>
+                      <p>• Empty corridors <br>• High ground <br>• Clean escapes </p>
+                    </div>
+                    <div class="list">
+                      <h3>Dislikes</h3>
+                      <p>• Being cornered <br>• Losing control <br>• The past </p>
+                    </div>
+                  </div>
+                  <div class="list" style="margin-top:10px;">
+                    <h3>Title</h3> She doesn’t remember who she was—only who she must become. Every jump through the Void is a step closer to truth. In the arena, she isn’t running. She’s searching.
+                  </div>
+                </div>
+              </div>
+              <!-- Right -->
+              <div class="panel">
+                <div class="panelHeader">
+                  <h2>Apex Legends</h2>
+                  <span>images</span>
+                </div>
+                <div class="panelBody">
+                  <div class="imageBlock imageWide" style="background:
+                    linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                    url('img/wraith2.jpg') center/cover no-repeat;">
+                    <!-- <div class="imageCaption">Wraith</div> -->
+                  </div>
+                  <div class="imageGrid3" style="margin-top:12px;">
+                    <div class="imageBlock imageSquare" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/wraith4.jpg') center/cover no-repeat;">
+                      <!-- <div class="imageCaption">quote</div> -->
+                    </div>
+                    <div class="imageBlock imageSquare" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/wraith3.gif') center/cover no-repeat;">
+                      <!-- <div class="imageCaption">quote</div> -->
+                    </div>
+                    <div class="imageBlock imageSquare" style="background:
+                      linear-gradient(180deg, rgba(29,3,4,.22), rgba(29,3,4,.02)),
+                      url('img/wraith1.jpg') center/cover no-repeat;">
+                      <!-- <div class="imageCaption">quote</div> -->
+                    </div>
+                  </div>
+                  <div class="quoteBlock" style="margin-top:12px;"> “I know what’s waiting for me in the Void.” </div>
+                  <div class="quote"> She isn’t running away. She’s running toward the truth. </div>
+                  <!-- Hobbies -->
+                  <div class="list" style="margin-top:10px;">
+                    <h3>Hobbies</h3>
+                    <div class="chipRow">
+                      <span class="chip">PHASE SHIFT</span>
+                      <span class="chip">SCOUTING</span>
+                      <span class="chip">PORTAL RUNS</span>
+                      <span class="chip">SOLO DROPS</span>
+                      <span class="chip">VOID LISTENING</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
-
