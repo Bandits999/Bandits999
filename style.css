@@ -47,6 +47,7 @@ background:
     radial-gradient(900px 500px at 110% 10%, rgba(38, 50, 56, .3), transparent 55%),
     linear-gradient(180deg, var(--paper), var(--paper2));
 box-sizing: border-box;
+padding-bottom: 30px;
 }
 
 .bg::before {
@@ -1037,3 +1038,4 @@ text-decoration: none;
     font-size: 32px;
 }
 }
+
